@@ -9,7 +9,9 @@ export default function Header({ cartCount, search, setSearch }) {
 
   return (
     <>
+      {/* MAIN HEADER CONTAINER */}
       <div
+        className="header-responsive"
         style={{
           width: "100%",
           padding: "15px 40px",
@@ -24,12 +26,16 @@ export default function Header({ cartCount, search, setSearch }) {
         }}
       >
         {/* LOGO */}
-        <h1 style={{ fontSize: "40px", color: "#C2185B", margin: 0 }}>
+        <h1
+          className="header-title"         
+		  style={{ fontSize: "40px", color: "#C2185B", margin: 0 }}
+        >
           Hair Accessories and Gift Gallery
         </h1>
 
-        {/* SEARCH BAR INSIDE HEADER */}
+        {/* SEARCH SECTION */}
         <div
+          className="header-search"
           style={{
             flexGrow: 1,
             maxWidth: "600px",
@@ -64,39 +70,52 @@ export default function Header({ cartCount, search, setSearch }) {
           </div>
         </div>
 
-        {/* LOGIN BUTTON */}
+        {/* LOGIN + CART WRAPPER */}
         <div
-          onClick={() => setLoginOpen(true)}
-          style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+          className="header-right"
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
         >
-          <FiUser size={26} color="#333" />
-          <span style={{ marginLeft: "8px", fontSize: "18px", color: "#333" }}>
-            {user ? `Hi, ${user}` : "Login"}
-          </span>
-        </div>
-
-        {/* CART */}
-        <Link to="/cart" style={{ textDecoration: "none" }}>
+          {/* LOGIN */}
           <div
+            onClick={() => setLoginOpen(true)}
             style={{
-              marginLeft: "25px",
               display: "flex",
-              cursor: "pointer",
               alignItems: "center",
+              cursor: "pointer",
             }}
           >
-            <FiShoppingCart size={26} color="#333" />
-            <span
-              style={{
-                fontSize: "18px",
-                marginLeft: "5px",
-                color: "#333",
-              }}
-            >
-              ({cartCount})
+            <FiUser size={26} color="#333" />
+            <span style={{ marginLeft: "8px", fontSize: "18px", color: "#333" }}>
+              {user ? `Hi, ${user}` : "Login"}
             </span>
           </div>
-        </Link>
+
+          {/* CART */}
+          <Link to="/cart" style={{ textDecoration: "none" }}>
+            <div
+              style={{
+                marginLeft: "25px",
+                display: "flex",
+                cursor: "pointer",
+                alignItems: "center",
+              }}
+            >
+              <FiShoppingCart size={26} color="#333" />
+              <span
+                style={{
+                  fontSize: "18px",
+                  marginLeft: "5px",
+                  color: "#333",
+                }}
+              >
+                ({cartCount})
+              </span>
+            </div>
+          </Link>
+        </div>
       </div>
 
       {/* LOGIN POPUP */}

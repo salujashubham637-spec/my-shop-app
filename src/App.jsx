@@ -21,6 +21,7 @@ export default function App() {
   path="/"
   element={
     <div
+	  className="product-grid"
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
@@ -35,6 +36,7 @@ export default function App() {
         )
         .map((item) => (
           <div
+		    className="product-card"
             key={item.id}
             style={{
               background: "#fff",

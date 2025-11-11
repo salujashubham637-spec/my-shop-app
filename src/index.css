@@ -153,3 +153,89 @@ h1 {
 .add-btn:hover {
   background: #066d00;
 }
+/* 📱 MOBILE FIX — only apply on screens below 600px */
+@media (max-width: 600px) {
+
+  /* App container full width */
+  .app-container {
+    padding: 10px !important;
+  }
+
+  /* Grid 2 items per row on mobile */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* Product card soft padding */
+  .product-card {
+    padding: 8px !important;
+  }
+
+  /* Product image responsive */
+  .product-image {
+    height: 140px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Product name font adjust */
+  .product-name {
+    font-size: 14px !important;
+  }
+
+  /* Price font */
+  .product-price {
+    font-size: 15px !important;
+  }
+
+  /* Header title center + reduce padding */
+  .app-title {
+    font-size: 22px !important;
+    text-align: center !important;
+    padding: 10px !important;
+  }
+}
+/* ✅ MOBILES BELOW 768px */
+@media (max-width: 768px) {
+
+  /* Title small + centered */
+  .header-title {
+    font-size: 28px !important;
+    text-align: center;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  }
+
+  /* Search bar full width */
+  .header-search {
+    max-width: 100% !important;
+    margin: 10px 0 !important;
+    padding: 0 15px;
+  }
+
+  /* Login + Cart center align */
+  .header-actions {
+    justify-content: center !important;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Product Grid — 2 items per row (Meesho style) */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 10px !important;
+  }
+
+  /* Product card smaller */
+  .product-card {
+    max-width: 100% !important;
+    border-radius: 12px !important;
+  }
+
+  /* Image height decrease */
+  .product-card img {
+    height: 180px !important;
+  }
+}
